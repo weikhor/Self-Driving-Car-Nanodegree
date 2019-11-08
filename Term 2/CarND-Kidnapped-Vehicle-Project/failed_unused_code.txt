@@ -1,0 +1,87 @@
+/*
+for(int j = 0; j < observations.size(); j++)
+{
+	normal_distribution<double> dist_obs_x(observations[i].x, std_l_x);
+	normal_distribution<double> dist_obs_y(observations[i].y, std_l_y);
+	        
+	car_x =  observations[i].x + dist_obs_x(gen);
+    car_y = observations[i].y + dist_obs_y(gen);
+	car_id =  observations[i].id;
+	    	
+	car_length = sqrt( pow ((car_x - p_x), 2.0) + pow ((car_y - p_y), 2.0) );
+	        
+    //transformation from car coordinates to map coordinates
+	m_x = cos(p_theta)*car_x - sin(p_theta)*car_y + p_x;
+	m_y = sin(p_theta)*car_x + cos(p_theta)*car_y + p_y;
+	curr_landmark.x = m_x;
+	curr_landmark.y = m_y;
+	    
+	double min_dis = std::numeric_limits<double>::infinity();
+	LandmarkObs min_landmark;
+			
+	for(int i = 0; i < map_landmarks.landmark_list.size() ; i++)
+	{
+		l_x = map_landmarks.landmark_list[i].x_f;
+	    l_y = map_landmarks.landmark_list[i].y_f;
+	    l_id = map_landmarks.landmark_list[i].id_i;
+	    length = sqrt( pow ((l_x - m_x), 2.0) + pow ((l_y - m_y), 2.0) );
+	    	        
+	    if(length < sensor_range && std::abs(length-car_length) < min_dis)
+	    {
+	    	        	
+	    	min_dis = std::abs(length-length_car_map);
+	    	        	
+	    	min_landmark.x = l_x;
+	        min_landmark.y = l_y;
+	        min_landmark.id = l_id;
+		}
+	}
+	predicted.push_back(min_landmark);  
+}
+	
+		
+if(length < sensor_range)
+{  
+	LandmarkObs curr_landmark;
+	    	
+	//normal_distribution<double> dist_l_x(l_x, std_l_x);
+	//normal_distribution<double> dist_l_y(l_y, std_l_y);
+	    		
+	//curr_landmark.x = l_x + dist_l_x(gen);
+	//curr_landmark.y = l_y + dist_l_y(gen);
+	//curr_landmark.id = l_id;
+	    		
+	//particles[i].associations.push_back(l_id);
+	    		
+	//transformation from car coordinates to map coordinates
+	//m_x = cos(p_theta)*curr_landmark.x - sin(p_theta)*curr_landmark.y + p_x;
+	//m_y = sin(p_theta)*curr_landmark.x + cos(p_theta)*curr_landmark.y + p_y;
+	//curr_landmark.x = m_x;
+	//curr_landmark.y = m_y;
+	    		
+	curr_landmark.x = l_x;
+	curr_landmark.y = l_y;
+	curr_landmark.id = l_id;
+	    		
+	predicted.push_back(curr_landmark);                          
+	}
+		
+//cout<<predicted.size()<<endl;
+//cout<<observations.size()<<endl;
+*/
+
+/*
+normal_distribution<double> dist_car_x(observations[i].x, std_car_x);
+normal_distribution<double> dist_car_y(observations[i].y, std_car_y);
+*/
+
+/*
+while(particle_theta > 2*M_PI)
+{
+	particle_theta = particle_theta - 2*M_PI;
+}
+while(particle_theta < -2*M_PI)
+{
+	particle_theta = particle_theta + 2*M_PI;
+}
+*/
